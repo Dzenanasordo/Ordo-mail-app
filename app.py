@@ -1,8 +1,11 @@
+import streamlit as st
+
 st.set_page_config(
     page_title="Ordo – Din personliga AI-agent",
     page_icon="🛠️",
     layout="wide"
 )
+
 st.markdown(
     """
     <style>
