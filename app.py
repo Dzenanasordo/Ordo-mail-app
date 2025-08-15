@@ -1,11 +1,14 @@
 import streamlit as st
-# Tillfällig testknapp
-if st.button("🔄 Testa anslutning"):
-    st.write("✅ Anslutning fungerar (testknapp)")
 from datetime import datetime, date
 
-# --- Layout och stil för mobil ---
+# --- MÅSTE vara först! ---
 st.set_page_config(page_title="Ordo – Din personliga AI-agent", page_icon="🛠️", layout="wide")
+
+# --- Testknapp ---
+if st.button("🔄 Testa anslutning"):
+    st.write("✅ Anslutning fungerar (testknapp)")
+
+# --- Layout och stil för mobil ---
 st.markdown(
     """
     <style>
