@@ -1,11 +1,11 @@
 import streamlit as st
 from datetime import datetime, date
 
-# --- MÅSTE vara först! ---
+# 🛠️ MÅSTE KOMMA FÖRST!
 st.set_page_config(page_title="Ordo – Din personliga AI-agent", page_icon="🛠️", layout="wide")
 
-# --- Testknapp ---
-if st.button("🔄 Testa anslutning"):
+# 🔄 Testknapp
+if st.button("Testa anslutning"):
     st.write("✅ Anslutning fungerar (testknapp)")
 
 # --- Layout och stil för mobil ---
