@@ -1,4 +1,7 @@
 import streamlit as st
+# Tillfällig testknapp
+if st.button("🔄 Testa anslutning"):
+    st.write("✅ Anslutning fungerar (testknapp)")
 from datetime import datetime, date
 
 # --- Layout och stil för mobil ---
