@@ -1,5 +1,15 @@
 import streamlit as st
 from datetime import datetime, date
+import gspread
+from google.oauth2.service_account import Credentials
+# 🧠 Anslutning till Google Sheet (minnesfunktion)
+SHEET_ID = "1j6LJaiylab0gJkJlrRGqUHz1rpinQ46j-ZUbbHt6yCxc"
+SHEET_TAB = "task"
+
+creds = Credentials.from_service_account_file("service_account.json", scopes=["https://www.googleapis.com/auth/spreadsheets"])
+client = gspread.authorize(creds)
+sheet = client.open_by_key(SHEET_ID).worksheet(SHEET_TAB)
+
 
 # 🛠️ MÅSTE KOMMA FÖRST!
 st.set_page_config(page_title="Ordo – Din personliga AI-agent", page_icon="🛠️", layout="wide")
