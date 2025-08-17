@@ -3,11 +3,20 @@ from datetime import datetime, date
 import gspread
 from google.oauth2.service_account import Credentials
 # 🧠 Anslutning till Google Sheet (minnesfunktion)
-SHEET_ID = "1j6LJaiylab0gJkJlrRGqUHz1rpinQ46j-ZUbbHt6yCxc"
-SHEET_TAB = "task"
+import json
 
-creds = Credentials.from_service_account_file("service_account.json", scopes=["https://www.googleapis.com/auth/spreadsheets"])
+# 🔐 Läs nyckeln från GitHub Secrets
+SERVICE_ACCOUNT = json.loads(st.secrets["SERVICE_ACCOUNT_JSON"])
+
+# 🧠 Google Sheet-inställningar
+SHEET_ID = "1j6lJaiyalb0gJklrRGgUHz1rpniQ46j-ZUBbH6tyCxc"
+SHEET_TAB = "task"  # eller "memory" om du har döpt fliken så
+
+# 🛠️ Anslut till Google Sheets
+creds = Credentials.from_service_account_info(SERVICE_ACCOUNT, scopes=["https://www.googleapis.com/auth/spreadsheets"])
 client = gspread.authorize(creds)
+sheet = client.open_by_key(SHEET_ID).worksheet(SHEET_TAB)
+
 sheet = client.open_by_key(SHEET_ID).worksheet(SHEET_TAB)
 
 
